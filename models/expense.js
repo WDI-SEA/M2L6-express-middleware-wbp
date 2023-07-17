@@ -42,6 +42,6 @@ function getOne(id) {
 function deleteOne(id) {
     id = parseInt(id);
     // Find the index for the todo
-    const idx = expenses.findIndex(expense => expense.id === id);
+    const idx = expenses.findIndex(expense => expense.id === Number(id));
     expenses.splice(idx, 1);
 }
