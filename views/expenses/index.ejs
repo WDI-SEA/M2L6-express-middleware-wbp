@@ -19,8 +19,8 @@
         <td>$<%= e.amount %></td>
         <td>
           <a href="/expenses/<%= e.id %>" role="button">Details</a>
-          <form class="delete-form">
-            <button>Delete</button>
+          <form class="delete-form" action="/expenses/<%= e.id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
           </form>
         </td>
       </tr>

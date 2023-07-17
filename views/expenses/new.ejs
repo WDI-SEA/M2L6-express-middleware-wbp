@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
 
-<form autocomplete="off">
+<form autocomplete="off" action="/expenses" method="POST">
 
   <label>Date</label>
-  <input type="text" placeholder="YYYY-MM-DD" required>
+  <input type="text" name="date" placeholder="YYYY-MM-DD" required>
 
   <label>Description</label>
-  <input type="text" placeholder="Short Description" required>
+  <input type="text" name="description" placeholder="Short Description" required>
 
   <label>Amount</label>
-  <input type="text" placeholder="X.XX" required>
+  <input type="text" name="amount" placeholder="X.XX" required>
   <small>Do not enter a $ Sign</small>
 
-  <button>Save Expense</button>
+  <button type="submit">Save Expense</button>
 </form>
 
 <%- include('../partials/footer') %>
