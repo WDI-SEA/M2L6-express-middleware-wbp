@@ -36,6 +36,6 @@ function create(req, res) {
 }
 
 function deleteOne(req, res) {
-  Expense.delete(req.body);
+  Expense.deleteOne(req.body);
   res.redirect('/expenses');
 }
