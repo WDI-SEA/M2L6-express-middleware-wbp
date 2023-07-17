@@ -5,6 +5,10 @@ const expensesCtrl = require('../controllers/expenses');
 
 router.get('/', expensesCtrl.index);
 
+router.get('/new', expensesCtrl.new);
+
 router.get('/:id', expensesCtrl.show);
+
+router.post('/', expensesCtrl.create);
 
 module.exports = router;

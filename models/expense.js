@@ -1,6 +1,8 @@
 module.exports = {
   getAll,
   getOne,
+  create,
+  deleteOne,
 };
 
 const expenses = [
@@ -24,6 +26,10 @@ const expenses = [
   }
 ];
 
+function create(expense) {
+  expense.id = Date.now() % 1000000;
+  expenses.push(expense);
+}
 function getAll() {
   return expenses;
 }
@@ -31,4 +37,11 @@ function getAll() {
 function getOne(id) {
   id = parseInt(id);
   return expenses.find(e => e.id === id);
+}
+
+function deleteOne(id) {
+    id = parseInt(id);
+    // Find the index for the todo
+    const idx = expenses.findIndex(expense => expense.id === id);
+    expenses.splice(idx, 1);
 }
