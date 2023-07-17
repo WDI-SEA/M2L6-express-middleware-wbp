@@ -3,7 +3,7 @@ module.exports = {
   show,
   new: newExpense,
   create,
-  delete: deleteOne,
+  delete: deleteExpense,
 };
 
 const Expense = require('../models/expense');
@@ -35,7 +35,7 @@ function create(req, res) {
   res.redirect('/expenses');
 }
 
-function deleteOne(req, res) {
+function deleteExpense(req, res) {
   Expense.deleteOne(req.body);
   res.redirect('/expenses');
 }
