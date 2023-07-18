@@ -2,6 +2,7 @@ module.exports = {
   index,
   show,
   deleteExpense,
+  newExpense,
 };
 const  Expense = require('../models/expense')
 
@@ -26,4 +27,7 @@ function deleteExpense(req,res){
   let id = parseInt(req.params.id)
   Expense.deleteExpense(id)
   res.redirect('/expenses')
+}
+function newExpense(req,res){
+  res.render('expenses/new', {title: "Add Expense"})
 }
