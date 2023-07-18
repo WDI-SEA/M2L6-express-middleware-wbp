@@ -6,6 +6,7 @@ const expensesCtrl = require('../controllers/expenses');
 router.get('/', expensesCtrl.index);
 
 router.get("/new", expensesCtrl.newExpense)
+router.post("/", expensesCtrl.create)
 router.get('/:id', expensesCtrl.show);
 router.delete('/:id', expensesCtrl.deleteExpense)
 

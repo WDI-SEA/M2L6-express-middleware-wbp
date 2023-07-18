@@ -3,6 +3,7 @@ module.exports = {
   show,
   deleteExpense,
   newExpense,
+  create,
 };
 const  Expense = require('../models/expense')
 
@@ -30,4 +31,10 @@ function deleteExpense(req,res){
 }
 function newExpense(req,res){
   res.render('expenses/new', {title: "Add Expense"})
+}
+
+function create(req,res){
+  console.log(req.body)
+  Expense.create(req.body)
+  res.redirect("/expenses")
 }
