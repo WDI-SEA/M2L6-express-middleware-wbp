@@ -36,7 +36,7 @@ describe('Expense Model', () => {
 
     const expenseToDelete = previousExpenses[Math.floor(Math.random() * previousExpensesLength)];
 
-    Expense.deleteOne(expenseToDelete.id);
+    Expense.delete(expenseToDelete.id);
 
     const allExpenses = Expense.getAll();
     const allExpensesFilteredForDeletedExpense = allExpenses.filter(e => 
