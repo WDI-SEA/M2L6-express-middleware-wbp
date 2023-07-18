@@ -1,9 +1,9 @@
 module.exports = {
   index,
   show,
+  deleteExpense,
 };
-
-const Expense = require('../models/expense');
+const  Expense = require('../models/expense')
 
 function index(req, res) {
   const expenses = Expense.getAll();
@@ -21,4 +21,9 @@ function show(req, res) {
     title: 'Expense Details',
     expense
   });
+}
+function deleteExpense(req,res){
+  let id = parseInt(req.params.id)
+  Expense.deleteExpense(id)
+  res.redirect('/expenses')
 }

@@ -1,6 +1,7 @@
 module.exports = {
   getAll,
   getOne,
+  deleteExpense,
 };
 
 const expenses = [
@@ -31,4 +32,9 @@ function getAll() {
 function getOne(id) {
   id = parseInt(id);
   return expenses.find(e => e.id === id);
+}
+
+function deleteExpense(id){
+  let idx = expenses.findIndex(e=>e.id===id)
+  expenses.splice(idx,1)
 }
