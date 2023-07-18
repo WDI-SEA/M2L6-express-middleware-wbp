@@ -1,7 +1,7 @@
 module.exports = {
   getAll,
   getOne,
-  deleteExpense,
+  delete: deleteExpense,
   create,
 };
 

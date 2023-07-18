@@ -5,9 +5,9 @@ const expensesCtrl = require('../controllers/expenses');
 
 router.get('/', expensesCtrl.index);
 
-router.get("/new", expensesCtrl.newExpense)
+router.get("/new", expensesCtrl.new)
 router.post("/", expensesCtrl.create)
 router.get('/:id', expensesCtrl.show);
-router.delete('/:id', expensesCtrl.deleteExpense)
+router.delete('/:id', expensesCtrl.delete)
 
 module.exports = router;
